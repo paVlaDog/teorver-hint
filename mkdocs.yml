@@ -1,0 +1,76 @@
+site_name: Теорвер — подсказки
+site_description: Теория к практикам по теории вероятностей
+site_author: Практики теорвера
+site_url: https://pavladog.github.io/teorver-hint/
+
+docs_dir: docs
+site_dir: site_build
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Тёмная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Светлая тема
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+nav:
+  - О сайте: index.md
+  - Практики:
+      - Практика 1. События и условные вероятности: practices/p01.md
+      - Практика 2. Случайные величины: practices/p02.md
+      - Практика 3. Геометрическая вероятность: practices/p03.md
+      - Практика 4. Дискретные распределения: practices/p04.md
+      - Практика 5. Производящие функции: practices/p05.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+plugins:
+  - search:
+      lang: ru
