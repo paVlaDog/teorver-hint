@@ -1,0 +1,1423 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Теория к практикам по теории вероятностей">
+      
+      
+        <meta name="author" content="Практики теорвера">
+      
+      
+        <link rel="canonical" href="https://pavladog.github.io/teorver-hint/practices/p07/">
+      
+      
+        <link rel="prev" href="../p05/">
+      
+      
+        <link rel="next" href="../p08/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Практика 7. Непрерывные СВ и преобразования - Теорвер — подсказки</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Теорвер — подсказки" class="md-header__button md-logo" aria-label="Теорвер — подсказки" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Теорвер — подсказки
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Практика 7. Непрерывные СВ и преобразования
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Теорвер — подсказки" class="md-nav__button md-logo" aria-label="Теорвер — подсказки" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Теорвер — подсказки
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    О сайте
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практики
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Практики
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 1. События и условные вероятности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 2. Случайные величины
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 3. Геометрическая вероятность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 4. Дискретные распределения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 5. Производящие функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 7. Непрерывные СВ и преобразования
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 7. Непрерывные СВ и преобразования
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Функции распределения и плотности
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Функции распределения и плотности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Плотность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Преобразование одномерной СВ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Строго монотонные преобразования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Немонотонные преобразования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Многомерные преобразования
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 8. Зоопарк непрерывных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 9. Многомерные, ЗБЧ и ЦПТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 10. Моменты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашние
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Домашние
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 1. События и условные вероятности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 2. Случайные величины
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 3. Геометрическая вероятность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 4. Дискретные распределения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 5. Производящие функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 7. Непрерывные случайные величины
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 8. Известные непрерывные распределения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 9. Многомерные, ЗБЧ и ЦПТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/hw10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Домашняя 10. Моменты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Функции распределения и плотности
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Функции распределения и плотности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Плотность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Преобразование одномерной СВ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Строго монотонные преобразования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Немонотонные преобразования
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Многомерные преобразования
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="7">Практика 7. Непрерывные СВ и преобразования<a class="headerlink" href="#7" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Функции распределения и плотности<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Функцией распределения называют функцию <span class="arithmatex">\(F(x)\)</span>, определяющую для каждого значения <span class="arithmatex">\(x\)</span> вероятность того, что случайная величина <span class="arithmatex">\(X\)</span> примет значение, меньшее <span class="arithmatex">\(x\)</span>,</p>
+<div class="arithmatex">\[
+F(x) = P(X &lt; x).
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Свойство 1. Значения функции распределения принадлежат отрезку <span class="arithmatex">\([0; 1]\)</span>:</p>
+<div class="arithmatex">\[
+0 \leqslant F(x) \leqslant 1.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Свойство 2. Функция распределения есть неубывающая функция:</p>
+<div class="arithmatex">\[
+F(x_2) \geqslant F(x_1), \quad \text{если } x_2 &gt; x_1.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Следствие 1. Вероятность того, что случайная величина <span class="arithmatex">\(X\)</span> примет значение, заключенное в интервале <span class="arithmatex">\((a, b)\)</span>, равна приращению функции распределения на этом интервале:</p>
+<div class="arithmatex">\[
+P(a &lt; X &lt; b) = F(b) - F(a).
+\]</div>
+<p><img alt="Приращение \(F(b)-F(a)\)" src="../../assets/p07/fig-cdf-increment.png" /></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Следствие 2. Вероятность того, что непрерывная случайная величина <span class="arithmatex">\(X\)</span> примет одно определенное значение, например <span class="arithmatex">\(x_1\)</span>, равна нулю:</p>
+<div class="arithmatex">\[
+P(X = x_1) = 0.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Свойство 3. Если все возможные значения случайной величины <span class="arithmatex">\(X\)</span> принадлежат интервалу <span class="arithmatex">\((a, b)\)</span>, то</p>
+<div class="arithmatex">\[
+F(x) = 0 \text{ при } x \leqslant a; \qquad F(x) = 1 \text{ при } x \geqslant b.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Следствие. Справедливы следующие предельные соотношения:</p>
+<div class="arithmatex">\[
+\lim_{x \to -\infty} F(x) = 0, \qquad \lim_{x \to +\infty} F(x) = 1.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Свойство 4. Функция распределения непрерывна слева:</p>
+<div class="arithmatex">\[
+\lim_{x \uparrow x_0} F(x) = F(x_0).
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>В современных курсах чаще пишут <span class="arithmatex">\(F(x)=P(X\leqslant x)\)</span> и непрерывность справа. Здесь — формулировка с <span class="arithmatex">\(P(X&lt;x)\)</span>, как в задачниках.</p>
+</div>
+<h3 id="_2">Плотность<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Плотностью распределения вероятностей непрерывной случайной величины называют первую производную от функции распределения: <span class="arithmatex">\(f(x) = F'(x)\)</span>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Вероятность того, что непрерывная случайная величина <span class="arithmatex">\(X\)</span> примет значение, принадлежащее интервалу <span class="arithmatex">\((a, b)\)</span>, определяется равенством</p>
+<div class="arithmatex">\[
+P(a &lt; X &lt; b) = \int_a^b f(x)\, dx.
+\]</div>
+<p><img alt="Площадь под плотностью" src="../../assets/p07/fig-pdf-area.png" /></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Зная плотность распределения, можно найти функцию распределения</p>
+<div class="arithmatex">\[
+F(x) = \int_{-\infty}^{x} f(x)\, dx.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Свойство 1. Плотность распределения неотрицательна, т. е. <span class="arithmatex">\(f(x) \geqslant 0\)</span>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Свойство 2. Несобственный интеграл от плотности распределения в пределах от <span class="arithmatex">\(-\infty\)</span> до <span class="arithmatex">\(\infty\)</span> равен единице: <span class="arithmatex">\(\int_{-\infty}^{\infty} f(x)\, dx = 1\)</span>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>В частности, если все возможные значения случайной величины принадлежат интервалу <span class="arithmatex">\((a, b)\)</span>, то <span class="arithmatex">\(\int_a^b f(x)\, dx = 1\)</span>.</p>
+</div>
+<h2 id="_3">Преобразование одномерной СВ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Пусть <span class="arithmatex">\(X \sim f_X(x)\)</span> — непрерывная случайная величина с носителем <span class="arithmatex">\(\mathcal{X}\)</span>. Пусть случайная величина <span class="arithmatex">\(Y\)</span> задана через преобразование <span class="arithmatex">\(Y = g(X)\)</span>. Тогда <span class="arithmatex">\(Y\)</span> имеет функцию распределения</p>
+<div class="arithmatex">\[
+F_Y(y) = \int_{\{x \in \mathcal{X} : g(x) \leqslant y\}} f_X(x)\, dx.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Дальше есть два пути: посчитать напрямую по этой формуле или разбить на монотонно возрастающие/убывающие интервалы, чтобы взять обратную функцию.</p>
+</div>
+<h2 id="_4">Строго монотонные преобразования<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Пусть <span class="arithmatex">\(X \sim F_X(x)\)</span> и <span class="arithmatex">\(Y = g(X)\)</span>, где <span class="arithmatex">\(g(x)\)</span> является строго монотонным преобразованием. Тогда</p>
+<ol>
+<li><span class="arithmatex">\(g\)</span> возрастает на <span class="arithmatex">\(\mathcal{X}\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(F_Y(y) = F_X\bigl(g^{-1}(y)\bigr)\)</span>, <span class="arithmatex">\(y \in \mathcal{Y}\)</span>;</li>
+<li><span class="arithmatex">\(g\)</span> убывает на <span class="arithmatex">\(\mathcal{X}\)</span> и <span class="arithmatex">\(X\)</span> является непрерывной <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(F_Y(y) = 1 - F_X\bigl(g^{-1}(y)\bigr)\)</span>, <span class="arithmatex">\(y \in \mathcal{Y}\)</span>.</li>
+</ol>
+<p><img alt="Возрастающее \(g\)" src="../../assets/p07/fig-mono-inc.png" /></p>
+<p><img alt="Убывающее \(g\)" src="../../assets/p07/fig-mono-dec.png" /></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Диффеоморфизмом называется такая биективная функция <span class="arithmatex">\(g(x)\)</span>, обратная <span class="arithmatex">\(g^{-1}(y)\)</span> которой является непрерывно дифференцируемой.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Пусть <span class="arithmatex">\(X \sim f_X(x)\)</span> является непрерывной случайной величиной и <span class="arithmatex">\(Y = g(X)\)</span>, где <span class="arithmatex">\(g\)</span> является диффеоморфизмом и строго монотонной функцией. Тогда плотность вероятности <span class="arithmatex">\(Y\)</span> имеет вид</p>
+<div class="arithmatex">\[
+f_Y(y) =
+\begin{cases}
+f_X\bigl(g^{-1}(y)\bigr) \left|\dfrac{d}{dy} g^{-1}(y)\right|, &amp; y \in \mathcal{Y}, \\
+0, &amp; y \notin \mathcal{Y},
+\end{cases}
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>где <span class="arithmatex">\(\mathcal{Y}\)</span> — носитель распределения <span class="arithmatex">\(Y\)</span>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Модуль производной — якобиан в одномерии: сжимаете ось <span class="arithmatex">\(x\)</span> в <span class="arithmatex">\(y\)</span>, плотность пересчитывается.</p>
+</div>
+<h2 id="_5">Немонотонные преобразования<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Пусть <span class="arithmatex">\(X \sim f_X(x)\)</span> и <span class="arithmatex">\(Y = g(X)\)</span>. Пусть существует такое разбиение <span class="arithmatex">\(A_0, A_1, \dots, A_k\)</span> для носителя <span class="arithmatex">\(\mathcal{X}\)</span> случайной величины <span class="arithmatex">\(X\)</span>, что <span class="arithmatex">\(f_X(x)\)</span> непрерывна на всех <span class="arithmatex">\(A_i\)</span> и <span class="arithmatex">\(P(X \in A_0) = 0\)</span>. Пусть существуют функции <span class="arithmatex">\(g_1(x), \dots, g_k(x)\)</span>, определенные на <span class="arithmatex">\(A_1, \dots, A_k\)</span> соответственно и удовлетворяющие условиям:</p>
+<ol>
+<li><span class="arithmatex">\(g(x) = g_i(x)\)</span>, <span class="arithmatex">\(x \in A_i\)</span>;</li>
+<li>множество <span class="arithmatex">\(\mathcal{Y} = \{ y : y = g_i(x) \text{ для } x \in A_i \}\)</span> одинаково для каждого <span class="arithmatex">\(i = 1, \dots, k\)</span>;</li>
+<li><span class="arithmatex">\(g_i(x)\)</span>, как отображение из <span class="arithmatex">\(A_i\)</span> в <span class="arithmatex">\(\mathcal{Y}\)</span>, является диффеоморфизмом.</li>
+</ol>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Тогда плотность вероятности <span class="arithmatex">\(Y\)</span> имеет вид:</p>
+<div class="arithmatex">\[
+f_Y(y) = \sum_{i=1}^{k} f_X\bigl(g_i^{-1}(y)\bigr) \left|\frac{d}{dy} g_i^{-1}(y)\right|, \qquad y \in \mathcal{Y}.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>На графике куски <span class="arithmatex">\(g_{i-1}\)</span>, <span class="arithmatex">\(g_i\)</span>, <span class="arithmatex">\(g_{i+1}\)</span> живут на <span class="arithmatex">\(A_{i-1}\)</span>, <span class="arithmatex">\(A_i\)</span>, <span class="arithmatex">\(A_{i+1}\)</span>.</p>
+<p><img alt="Монотонные куски немонотонного \(g\)" src="../../assets/p07/fig-nonmono-pieces.png" /></p>
+</div>
+<h2 id="_6">Многомерные преобразования<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Одномерная случайная величина: <span class="arithmatex">\(X \sim f_X\)</span>, диффеоморфизм <span class="arithmatex">\(Y = g(X)\)</span>, плотность</p>
+<div class="arithmatex">\[
+f_Y(y) = f_X\bigl(g^{-1}(y)\bigr) \left|\frac{d}{dy} g^{-1}(y)\right| \mathbf{1}_{\Omega_Y}(y).
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Двумерная случайная величина: <span class="arithmatex">\((X, Y) \sim f_{X,Y}\)</span>, диффеоморфизм <span class="arithmatex">\(U = g_1(X, Y)\)</span>, <span class="arithmatex">\(V = g_2(X, Y)\)</span>. Обратные отображения: <span class="arithmatex">\(X = h_1(U, V)\)</span> и <span class="arithmatex">\(Y = h_2(U, V)\)</span>. Плотность</p>
+<div class="arithmatex">\[
+f_{U,V}(u, v) = f_{X,Y}\bigl(h_1(u, v), h_2(u, v)\bigr) |J| \mathbf{1}_{\Omega_{U,V}}(u, v).
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>В многомерном случае производная обратной функции заменяется на якобиан:</p>
+<div class="arithmatex">\[
+J = \begin{vmatrix}
+\dfrac{\partial h_1(u, v)}{\partial u} &amp; \dfrac{\partial h_1(u, v)}{\partial v} \\[6pt]
+\dfrac{\partial h_2(u, v)}{\partial u} &amp; \dfrac{\partial h_2(u, v)}{\partial v}
+\end{vmatrix}
+= \frac{\partial h_1}{\partial u}\frac{\partial h_2}{\partial v} - \frac{\partial h_2}{\partial u}\frac{\partial h_1}{\partial v},
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>где <span class="arithmatex">\(J \ne 0\)</span> и <span class="arithmatex">\((u, v) \in \Omega_{U,V}\)</span>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Небиективное преобразование: разбиение <span class="arithmatex">\(A_0, A_1, \dots, A_k \subset \Omega_{X,Y}\)</span>,</p>
+<ul>
+<li><span class="arithmatex">\(P\bigl((X, Y) \in A_0\bigr) = 0\)</span>;</li>
+<li>для <span class="arithmatex">\(A_i\)</span> дан диффеоморфизм <span class="arithmatex">\((U, V) = \bigl(g_{1i}(X, Y), g_{2i}(X, Y)\bigr)\)</span>, отображающий <span class="arithmatex">\(A_i\)</span> в <span class="arithmatex">\(\Omega_{U,V}\)</span>;</li>
+<li>обратное преобразование: <span class="arithmatex">\((X, Y) = \bigl(h_{1i}(U, V), h_{2i}(U, V)\bigr)\)</span>.</li>
+</ul>
+<p><img alt="Разбиение плоскости и образ" src="../../assets/p07/fig-2d-partition.png" /></p>
+<div class="arithmatex">\[
+f_{U,V}(u, v) = \sum_{i=1}^{k} f_{X,Y}\bigl(h_{1i}(u, v), h_{2i}(u, v)\bigr) |J_i|,
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>где</p>
+<div class="arithmatex">\[
+J_i = \begin{vmatrix}
+\dfrac{\partial h_{1i}}{\partial u} &amp; \dfrac{\partial h_{1i}}{\partial v} \\[6pt]
+\dfrac{\partial h_{2i}}{\partial u} &amp; \dfrac{\partial h_{2i}}{\partial v}
+\end{vmatrix}.
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Сумма — преобразование <span class="arithmatex">\((x, y) \to (x + y, y)\)</span>: <span class="arithmatex">\(u = x + y\)</span>, <span class="arithmatex">\(v = y\)</span>, якобиан равен 1, обратное <span class="arithmatex">\(x = u - v\)</span>, <span class="arithmatex">\(y = v\)</span>,</p>
+<div class="arithmatex">\[
+f_{U,V}(u, v) = f_{X,Y}(u - v,\ v).
+\]</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">На доску</p>
+<p>Если <span class="arithmatex">\(X\)</span> и <span class="arithmatex">\(Y\)</span> независимы, совместная плотность равна произведению. Маргинал по <span class="arithmatex">\(v\)</span> даёт плотность суммы:</p>
+<div class="arithmatex">\[
+f_U(u) = \int_{-\infty}^{+\infty} f_X(u - v)\, f_Y(v)\, dv.
+\]</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
